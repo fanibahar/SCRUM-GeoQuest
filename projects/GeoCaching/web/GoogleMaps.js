@@ -54,7 +54,7 @@ function addLatLng(event)
     // and it will automatically appear
     path.push(event.latLng);
     addMarker(event.latLng);
-    }
+}
 
 // Add a marker to the map and push to the array.
 function addMarker(location)
@@ -62,8 +62,9 @@ function addMarker(location)
     marker = new google.maps.Marker({position: location,map: map});
     markers.push(marker);
     v = location.toString();
-    var name = wayname.value;
-
+    
+    var name = document.getElementById("wayname").value;
+    
     loadXMLDoc("addwaypoint="+v+"&name="+name);
 }
 
@@ -118,8 +119,8 @@ function saveTour()
         level = "high";
     }
     
-    var name = tourname.value;
-    var description = tourdescription.value;
+    var name = document.getElementById("tourname").value;
+    var description = document.getElementById("tourdescription").value;
     
     
     if (name == "" && description == "")

@@ -5,3 +5,7 @@
 *.war
 *.ear
 /experimental/jQuery/nbproject/private/
+/projects/GeoCaching/build/
+/experimental/jQuery/build/
+/experimental/jQuery/dist/
+/projects/GeoCaching/dist/

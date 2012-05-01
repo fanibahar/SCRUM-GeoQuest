@@ -15,8 +15,7 @@
                     <style type="text/css">
                 #map-canvas {width: 300px; height: 300px}
             </style>
-            <script type="text/javascript"
-                src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD3lQBr4cZ2do3Nr3QB4iFpQkdjCrS703E&sensor=true">
+            <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD3lQBr4cZ2do3Nr3QB4iFpQkdjCrS703E&sensor=true">
             </script>
 
             
