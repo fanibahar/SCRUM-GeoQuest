@@ -18,6 +18,7 @@ function loadXMLDoc(v)
             document.getElementById("WaypointsCanvas").innerHTML=xmlhttp.responseText;
         }
     }
+    
     //for client server use:
     //xmlhttp.open("GET", "http://131.220.239.232:8080/GeoCaching/CreateTourServlet?"+v,true);
     
@@ -61,8 +62,8 @@ function addMarker(location)
 {
     var marker = new google.maps.Marker({position: location,map: map});
     
-    var contentString = location.toString();
-    
+    var contentString = "<input type=\"text\" id=\"wayname2\" required placeholder=\"Enter Waypoint Name Here\" />";
+                                            
     var infowindow = new google.maps.InfoWindow({
             content: contentString
         });
