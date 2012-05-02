@@ -22,6 +22,7 @@
                 <nav>
                     <ul>
                         <li><a href="index.jsp" class="current">Home</a></li>
+                        <li><a href="ListTours.jsp">Tours</a></li>
                         <li><a href="createTour.jsp">Create Tour</a></li>
                         <li><a href="editTour.jsp">Edit Tour</a></li>
                         <li><a href="#">About</a></li>

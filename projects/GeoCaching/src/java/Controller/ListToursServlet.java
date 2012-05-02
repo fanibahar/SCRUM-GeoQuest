@@ -30,7 +30,7 @@ public class ListToursServlet extends HttpServlet {
     private EntityManagerFactory emf;
     @Resource
     private UserTransaction utx;
-
+    
     // Copy this piece 4 instruction where you need to have the list of tours to display it.
     private void ThisMethodHasHowYouWillGetTheListOfToursFromTheDatabase() throws ServletException {
         EntityManager em = StartDBTransaction();
@@ -56,25 +56,42 @@ public class ListToursServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        
+        String HtmlContent="";
         PrintWriter out = response.getWriter();
+        
+        EntityManager em = StartDBTransaction();
+       
+        CreateTourDatabaseMethods createTourLogic = new CreateTourDatabaseMethods(em);
+
+        // This variable has the list of tours
+        List<Tour> allTours = createTourLogic.GetAllTours();
+        
+        HtmlContent+=
+        "<table class='servicesT' cellspacing='0'>"+
+        "<tr><td colspan='4' class='servHd'><h3>GeoCaching list of tours</h3></td></tr><tr>"+
+        "<td class='servSHd'>#</td><td class='servSHd'>Tour name</td><td class='servSHd'>Difficulty</td>"+
+        "<td class='servSHd'>Description</td></tr>";
+        
         try {
-            /*
-             * TODO output your page here. You may use following sample code.
-             */
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ListToursServlet</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ListToursServlet at " + request.getContextPath() + "</h1>");
+            for (int i = 0; i < allTours.size(); i++) {
+                HtmlContent+="<tr>"
+                        + "<td class='servBodL'>"+allTours.get(i).getTourId()+"</td>"
+                        + "<td class='servBodL'><a href='#'>"+allTours.get(i).getTourName()+"</a></td>"
+                        + "<td class='servBodL'>"+allTours.get(i).getTourDifficulty()+"</td>"
+                        + "<td class='servBodL'>"+allTours.get(i).getTourDescription()+"</td>"
+                        +"</tr>";
+            }
+            out.println(HtmlContent);
             
-            ThisMethodHasHowYouWillGetTheListOfToursFromTheDatabase();
-            
-            out.println("</body>");
-            out.println("</html>");
+       
         } finally {
             out.close();
         }
+         HtmlContent+="</table>";
+         // Always need to end with this call.
+        EndDBTransaction(em);
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

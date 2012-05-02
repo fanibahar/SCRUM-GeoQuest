@@ -1,8 +1,4 @@
-<%-- 
-    Document   : createTour
-    Created on : Apr 22, 2012, 11:03:15 AM
-    Author     : Ankit
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -33,8 +29,9 @@
                 <h1><a href="index.jsp">GeoCaching</a></h1>
                 <nav>
                     <ul>
-                        <li><a href="index.jsp" class="current">Home</a></li>
-                        <li><a href="createTour.jsp">Create Tour</a></li>
+                        <li><a href="index.jsp">Home</a></li>
+                        <li><a href="ListTours.jsp">Tours</a></li>
+                        <li><a href="createTour.jsp" class="current">Create Tour</a></li>
                         <li><a href="editTour.jsp">Edit Tour</a></li>
                         <li><a href="#">About</a></li>
                         <li><a href="#">Contact</a></li>
