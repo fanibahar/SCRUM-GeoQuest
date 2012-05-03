@@ -32,9 +32,22 @@ var poly;
 var polyOptions;
 var v="";
 
+
+function error(msg)
+{
+    var latlng = new google.maps.LatLng(0, 0);
+    map.setCenter(latlng);
+}
+
+function success(position)
+{
+    var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+    map.setCenter(latlng);
+}
+
 function initialize()
 {
-    var haightAshbury = new google.maps.LatLng(37.7699298, -122.4469157);
+    var haightAshbury = new google.maps.LatLng(50.741235, 7.114334);
     var mapOptions = {zoom: 12, center: haightAshbury, mapTypeId: google.maps.MapTypeId.TERRAIN};
     polyOptions = {strokeColor: '#000000', strokeOpacity: 1.0, strokeWeight: 3};
 
@@ -44,6 +57,7 @@ function initialize()
     poly.setMap(map);
 
     google.maps.event.addListener(map, 'click', addLatLng);
+    //navigator.geolocation.getCurrentPosition(success, error);
 }
 
 function addLatLng(event)
