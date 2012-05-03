@@ -62,9 +62,8 @@
                 <nav>
                     <ul>
                         <li><a href="index.jsp">Home</a></li>
-                        <li><a href="ListTours.jsp" class="current">Tours</a></li>
+                        <li><a href="ListTours.jsp" class="current">Browse Tours</a></li>
                         <li><a href="createTour.jsp">Create Tour</a></li>
-                        <li><a href="editTour.jsp">Edit Tour</a></li>
                         <li><a href="#">About</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
