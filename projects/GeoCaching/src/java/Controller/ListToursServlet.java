@@ -77,7 +77,7 @@ public class ListToursServlet extends HttpServlet {
             for (int i = 0; i < allTours.size(); i++) {
                 HtmlContent+="<tr>"
                         + "<td class='servBodL'>"+allTours.get(i).getTourId()+"</td>"
-                        + "<td class='servBodL'><a href='#'>"+allTours.get(i).getTourName()+"</a></td>"
+                        + "<td class='servBodL'><a href='#'title='Browse/Edit'>"+allTours.get(i).getTourName()+"</a></td>"
                         + "<td class='servBodL'>"+allTours.get(i).getTourDifficulty()+"</td>"
                         + "<td class='servBodL'>"+allTours.get(i).getTourDescription()+"</td>"
                         +"</tr>";
